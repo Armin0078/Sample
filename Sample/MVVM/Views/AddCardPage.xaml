@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Sample.MVVM.ViewModels"
+             x:DataType="viewmodel:AddCardPageViewModel"
+             x:Class="Sample.MVVM.Views.AddCardPage"
+             Title="AddCardPage">
+    <VerticalStackLayout>
+        <Entry Text="{Binding Text}"
+               x:Name="entCard"
+               Margin="20"
+               Placeholder="Write Text Here"/>
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="20" Margin="0,20,0,0">
+            <Button Text="Confirm"
+            BackgroundColor="#007AFF"
+            TextColor="White"
+            CornerRadius="20"
+            Margin="10"
+            Command="{Binding AddCardCommand}"
+            Clicked="OnButtonClicked"/>
+
+            <Button Grid.Column="1"
+                    Text="Cancel"
+                    BackgroundColor="#FF3B30"
+                    TextColor="White"
+                    CornerRadius="20"
+                    Margin="10"
+                    Clicked="OnButtonClicked"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
